@@ -1,0 +1,33 @@
+:root {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: #1f2933;
+  background-color: #e3d5b8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  background-color: #e3d5b8;
+}
+
+canvas {
+  touch-action: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Скрываем стандартный курсор на холсте для рисования */
+.custom-cursor-canvas {
+  cursor: none !important;
+}
+
+/* Стили для кастомного курсора */
+.custom-cursor {
+  transition: none;
+  will-change: transform;
+}
