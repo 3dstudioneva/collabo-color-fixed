@@ -2,8 +2,3 @@
   command = "npm install && npm run build"
   functions = "netlify/functions"
   publish = "dist"
-
-[[redirects]]
-  from = "/socket.io/*"
-  to = "/.netlify/functions/socket"
-  status = 200
