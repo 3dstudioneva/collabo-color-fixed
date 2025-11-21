@@ -220,7 +220,7 @@ const ColoringView: React.FC<ColoringViewProps> = ({ user, onBackToAuth }) => {
     const backgroundCanvasRef = useRef<HTMLCanvasElement>(null);
     const displayCanvasRef = useRef<HTMLCanvasElement>(null);
     const painterRef = useRef<CanvasPainter | null>(null);
-    const socket = useSocket(import.meta.env.VITE_WS_URL || 'wss://collabo-color-ws.onrender.com');
+    const socket = useSocket();
 
     useEffect(() => {
         if (!backgroundCanvasRef.current || !displayCanvasRef.current || !containerRef.current) return;
@@ -229,7 +229,7 @@ const ColoringView: React.FC<ColoringViewProps> = ({ user, onBackToAuth }) => {
             onColorPick: setColor,
             onDraw: (data) => {
                 if (socket) {
-                    socket.emit('draw', data);
+                    socket.emit('drawing', data);
                 }
             },
         });
