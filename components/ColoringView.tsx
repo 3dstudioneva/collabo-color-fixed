@@ -236,7 +236,7 @@ const ColoringView: React.FC<ColoringViewProps> = ({ user, onBackToAuth }) => {
         painterRef.current = painter;
         
         if (socket) {
-            socket.on('draw', (data) => {
+            socket.on('drawing', (data) => {
                 painterRef.current?.executeDraw(data);
             });
             socket.on('clear', () => painterRef.current?.clear(true));
